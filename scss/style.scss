@@ -23,6 +23,21 @@ body {
   color: var(--gray-500);
 }
 
+@font-face {
+  font-family: "Figtree";
+  src: url(assets/font/static/Figtree-ExtraBold.ttf) format("truetype"),
+    url(assets/font/static/Figtree-SemiBold.ttf) format("truetype");
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Figtree";
+  src: url(assets/font/static/Figtree-SemiBold.ttf) format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
 .container {
   // background-color: var(--yellow);
   width: 100%;
@@ -37,6 +52,7 @@ body {
   padding: 3rem;
   background: var(--white);
   width: fit-content;
+  max-width: 100%;
   border-radius: 1.6rem;
   box-shadow: 1rem 1rem var(--gray-950);
   border: 2px solid var(--gray-950);
@@ -44,18 +60,20 @@ body {
   &__img {
     border-radius: 1.6rem;
     display: block;
-    margin-bottom: 3rem;
+    margin-bottom: 2.4rem;
+    width: 100%;
+    height: auto;
   }
 
   &__tag {
-    font-size: 1.8rem;
-    font-weight: 900;
+    font-size: 1.4rem;
+    font-weight: bolder;
     color: var(--gray-950);
     background: var(--yellow);
     display: inline-block;
     padding: 0.5rem 1.6rem;
     border-radius: 0.4rem;
-    margin-bottom: 1.6rem;
+    margin-bottom: 1.4rem;
   }
 
   &__date {
@@ -66,7 +84,9 @@ body {
   &__heading {
     color: var(--gray-950);
     font-size: 2.3rem;
-    margin: 2rem 0;
+    margin: 1.6rem 0;
+    font-weight: bolder;
+    transition: color 0.3s ease;
 
     &:hover {
       color: var(--yellow);
@@ -93,11 +113,12 @@ body {
   &__name {
     font-size: 1.6rem;
     color: var(--gray-950);
+    font-weight: bolder;
   }
 }
 
 .attribution {
-  font-size: 14px;
+  font-size: 1.4rem;
   text-align: center;
   background-color: var(--gray-950);
   padding: 2rem;
@@ -108,9 +129,52 @@ body {
     color: hsl(0, 0%, 59%);
     text-decoration: none;
     font-weight: 600;
+    transition: color 0.3s ease;
 
     &:hover {
       color: var(--yellow);
     }
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 1.4rem;
+  }
+
+  .card__heading {
+    font-size: 2rem;
+  }
+
+  .card__paragraph {
+    width: 100%;
+  }
+
+  .profile__img {
+    width: 3rem;
+    height: 3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    flex-direction: column;
+    padding: 2rem;
+  }
+
+  .card {
+    padding: 2rem;
+    width: 100%;
+  }
+  .card__heading {
+    font-size: 1.8rem;
+  }
+
+  .card__paragraph {
+    width: 100%;
+  }
+
+  .attribution {
+    font-size: 1.2rem;
   }
 }
